@@ -1,0 +1,9 @@
+# Client side
+node_modules*
+
+# Server side
+server/node_modules/
+server/dist/
+
+# Root directory
+.eslintrc.json
