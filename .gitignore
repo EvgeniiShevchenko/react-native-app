@@ -1,2 +1,4 @@
 server/.gitignore
+client/.gitignore
 node_modules
+.vscode
