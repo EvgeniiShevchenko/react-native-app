@@ -7,22 +7,20 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {Provider} from 'react-redux';
+import store from './store';
+
+// Components
+import Home from './components/Pages/Home';
 
 const App: () => React$Node = () => {
   return (
     <>
-      <View>
-        <Text style={styles.hello}>Hello</Text>
-      </View>
+      <Provider store={store}>
+        <Home />
+      </Provider>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  hello: {
-    textAlign: 'center',
-  },
-});
 
 export default App;
