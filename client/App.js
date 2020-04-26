@@ -11,13 +11,17 @@ import {Provider} from 'react-redux';
 import store from './store';
 
 // Components
+import Header from './components/Layouts/Header';
+import Footer from './components/Layouts/Footer';
 import Home from './components/Pages/Home';
 
 const App: () => React$Node = () => {
   return (
     <>
       <Provider store={store}>
+        <Header />
         <Home />
+        <Footer />
       </Provider>
     </>
   );

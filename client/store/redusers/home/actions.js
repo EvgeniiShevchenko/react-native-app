@@ -12,38 +12,18 @@ export const setUser = action => {
   };
 };
 
-export const getUsers = async action => {
-  const data = [{name: 'evgenii'}];
+export const getUsers = () => async dispatch => {
+  try {
+    // const {data} = await axios.get('/api/users');
+    const data = require('client/assets/models/users.json');
 
-  return {
-    type: 'GET_USERS',
-    payload: data,
-  };
-  // try {
-  //   // const {data} = await axios.get('/api/users');
-  //   const data = [{name: 'evgenii'}];
-
-  //   dispatch({
-  //     type: 'GET_USERS',
-  //     payload: data,
-  //   });
-  // } catch (error) {
-  //   console.log(error);
-  // }
+    dispatch({
+      type: 'GET_USERS',
+      payload: data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
-
-// export const getUsers = () => async dispatch => {
-//   try {
-//     // const {data} = await axios.get('/api/users');
-//     const data = [{name: 'evgenii'}];
-
-//     dispatch({
-//       type: 'GET_USERS',
-//       payload: data,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
 
 export default actionsConstant;

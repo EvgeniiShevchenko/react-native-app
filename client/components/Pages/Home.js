@@ -1,48 +1,35 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
+import {SafeAreaView, ScrollView} from 'react-native';
 import {getUsers} from '../../store/redusers/home/actions';
+import UserList from '../Modules/UserList';
 
 class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'Hello',
-    };
-  }
-
-  sayHello() {
-    return this.state.name;
+  constructor(props) {
+    super(props);
   }
 
   componentDidMount() {
-    console.log('componentDidMount', this.props.users);
     this.props.getUsers();
   }
 
   render() {
-    const {users} = this.props;
+    const {users} = this.props; // Props
 
     return (
-      <View>
-        <Text style={styles.hello}>
-          {/* {users.length !== 0 ? users[0].name : 'cxzc'} */}
-          lgmfd;
-        </Text>
-      </View>
+      <Container>
+        <ScrollView>
+          <UserList users={users} />
+        </ScrollView>
+      </Container>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  hello: {
-    textAlign: 'center',
-  },
-});
-
 const PutPropsToState = state => {
   const users = state.homeReduser.users;
-  console.log('PutPropsToState', users);
+
   return {users};
 };
 
@@ -54,3 +41,7 @@ export default connect(
   PutPropsToState,
   putActionToProps,
 )(Home);
+
+const Container = styled(SafeAreaView)`
+  flex: 1;
+`;
