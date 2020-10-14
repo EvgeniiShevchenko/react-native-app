@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default () => {
   return (
     <Container>
-      <Title>Footer</Title>
+      <Title>Footers</Title>
     </Container>
   );
 };
