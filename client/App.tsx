@@ -14,7 +14,7 @@ import store from './store';
 import Header from './components/Layouts/Header';
 import Footer from './components/Layouts/Footer';
 import Home from './components/Pages/Home';
-
+// @ts-ignore-bloc
 const App: () => React$Node = () => {
   return (
     <>
