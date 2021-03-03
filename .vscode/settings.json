@@ -35,5 +35,5 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "javascript.validate.enable": false
+    "javascript.validate.enable": false,
 }
