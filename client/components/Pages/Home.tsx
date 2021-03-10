@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import styled from 'styled-components';
 import {SafeAreaView, ScrollView} from 'react-native';
@@ -11,7 +11,7 @@ type state = {
   };
 };
 
-const Home: FC = () => {
+export default () => {
   const dispatch = useDispatch();
   const users = useSelector(state => state as state);
 
@@ -27,45 +27,6 @@ const Home: FC = () => {
     </Container>
   );
 };
-
-// class Home extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   componentDidMount() {
-//     this.props.getUsers();
-//   }
-
-//   render() {
-//     const {users} = this.props; // Props
-
-//     return (
-//       <Container>
-//         <ScrollView>
-//           <UserList users={users} />
-//         </ScrollView>
-//       </Container>
-//     );
-//   }
-// }
-
-// const PutPropsToState = state => {
-//   const users = state.homeReduser.users;
-
-//   return {users};
-// };
-
-// const putActionToProps = {
-//   getUsers,
-// };
-
-// export default connect(
-//   PutPropsToState,
-//   putActionToProps,
-// )(Home);
-
-export default Home;
 
 const Container = styled(SafeAreaView)`
   flex: 1;

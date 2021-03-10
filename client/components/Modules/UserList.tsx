@@ -31,33 +31,6 @@ const Userlist: FC<Props> = ({users}) => {
   );
 };
 
-// class UserList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   sayHello = () => {
-//     console.log('hello', this.props);
-//   };
-
-//   render() {
-//     const usersList = this.props.users.map((item, index) => {
-//       return <UserItem key={'user' + index} id={'user' + index} item={item} />;
-//     });
-
-//     return (
-//       <>
-//         <Container>
-//           {usersList}
-//           <ButtonWrapper>
-//             <AddUserBtn title="Create new user" onPress={this.sayHello} />
-//           </ButtonWrapper>
-//         </Container>
-//       </>
-//     );
-//   }
-// }
-
 export default Userlist;
 
 const Container = styled(View)`

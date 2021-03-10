@@ -3,10 +3,9 @@ import {TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {BoxShadow} from 'react-native-shadow';
 import {View, Text} from 'react-native';
-// import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-// import {faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components/native';
-// import {connect} from 'react-redux';
 // types
 import {User} from '../../types';
 
@@ -28,17 +27,9 @@ interface Props {
 }
 
 const UserItem: FC<Props> = ({id, item}) => {
-  // const sayHello = () => {
-  //   console.log('hello');
-  // };
-
   const deleteItems = () => {
     console.log('delete item');
   };
-
-  // const changeItems = () => {
-  //   console.log('change item');
-  // };
 
   return (
     <Container id={id}>
@@ -73,14 +64,14 @@ const UserItem: FC<Props> = ({id, item}) => {
             <BoxShadow setting={shadowOpt}>
               <Gradient colors={['#4c669f', '#3b5998', '#192f6a']}>
                 <ChangeBtn onPress={deleteItems}>
-                  {/* <ChangeBtnIcon icon={faEdit} /> */}
+                  <ChangeBtnIcon icon={faEdit} />
                 </ChangeBtn>
               </Gradient>
             </BoxShadow>
             <BoxShadow setting={shadowOpt}>
               <Gradient colors={['#4c669f', '#3b5998', '#192f6a']}>
                 <ChangeBtn onPress={deleteItems}>
-                  {/* <DeleteBtnIcon icon={faTrash} /> */}
+                  <DeleteBtnIcon icon={faTrash} />
                 </ChangeBtn>
               </Gradient>
             </BoxShadow>
@@ -92,80 +83,6 @@ const UserItem: FC<Props> = ({id, item}) => {
 };
 
 export default UserItem;
-
-// class UserItem extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   sayHello() {
-//     console.log('hello');
-//   }
-
-//   deleteItems = () => {
-//     console.log('delete item');
-//   };
-
-//   changeItems = () => {
-//     console.log('change item');
-//   };
-
-//   render() {
-//     const {item, id} = this.props;
-
-//     return (
-//       <Container id={id}>
-//         <Row>
-//           <Title>name:</Title>
-//           <Description>{`${item.name}`}</Description>
-//         </Row>
-//         <Row>
-//           <Title>surname:</Title>
-//           <Description>{`${item.surname}`}</Description>
-//         </Row>
-//         <Row>
-//           <Title>birth date:</Title>
-//           <Description>{`${item.bornDate}`}</Description>
-//         </Row>
-//         <Row>
-//           <Title accessibilityRole="link">phone:</Title>
-//           <Description>{`${item.phone}`}</Description>
-//         </Row>
-//         <Row>
-//           <Title>email:</Title>
-//           <Description
-//             accessibilityHint="kclmdslvkml"
-//             accessibilityRole="link"
-//             numberOfLines={1}
-//             dataDetectorType="link"
-//             ellipsizeMode="tail">{`${item.email}`}</Description>
-//         </Row>
-//         <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
-//           <ButtonContainer>
-//             <ButtonWrapper>
-//               <BoxShadow setting={shadowOpt}>
-//                 <Gradient colors={['#4c669f', '#3b5998', '#192f6a']}>
-//                   <ChangeBtn title="#" onPress={this.deleteItems}>
-//                     {/* <ChangeBtnIcon icon={faEdit} /> */}
-//                   </ChangeBtn>
-//                 </Gradient>
-//               </BoxShadow>
-//               <BoxShadow setting={shadowOpt}>
-//                 <Gradient colors={['#4c669f', '#3b5998', '#192f6a']}>
-//                   <ChangeBtn title="#" onPress={this.deleteItems}>
-//                     {/* <DeleteBtnIcon icon={faTrash} /> */}
-//                   </ChangeBtn>
-//                 </Gradient>
-//               </BoxShadow>
-//             </ButtonWrapper>
-//           </ButtonContainer>
-//         </LinearGradient>
-//       </Container>
-//     );
-//   }
-// }
-
-// export default connect()(UserItem);
 
 const Container = styled.View``;
 
@@ -215,10 +132,10 @@ const ChangeBtn = styled(TouchableOpacity)`
   height: 30px;
 `;
 
-// const ChangeBtnIcon = styled(FontAwesomeIcon)`
-//   color: white;
-// `;
+const ChangeBtnIcon = styled(FontAwesomeIcon)`
+  color: white;
+`;
 
-// const DeleteBtnIcon = styled(FontAwesomeIcon)`
-//   color: red;
-// `;
+const DeleteBtnIcon = styled(FontAwesomeIcon)`
+  color: red;
+`;
